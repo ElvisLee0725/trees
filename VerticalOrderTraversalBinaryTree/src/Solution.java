@@ -21,7 +21,7 @@ public class Solution {
     public static void main(String[] args) {
         int [] arr = new int[]{1, 2, 3, 4, 5, 6, 7};
         TreeNode root = new Solution().createTree(arr);
-        
+
         List<List<Integer>> res = new Solution().verticalTraversal(root);
 
         for(List<Integer> list : res) {
