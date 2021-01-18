@@ -12,32 +12,32 @@ public class Solution {
         System.out.print(new Solution().findJudge(4, trust));
     }
     // Use an arr[N+1], if arr[i] is -1, means it trusts others so it's not a judge. If arr[i] == N - 1, it's the judge
-// Iterate trust and set arr[trust[i][0]] to -1
-// Iterate trust again and if arr[i] is not -1, arr[trust[i][1]]++
-// Iterate arr and if arr[i] == N-1, return i. If there is no such index, return -1 at the end
-// Time: O(n), Space: O(n)
+    // Iterate trust and set arr[trust[i][0]] to -1
+    // Iterate trust again and if arr[i] is not -1, arr[trust[i][1]]++
+    // Iterate arr and if arr[i] == N-1, return i. If there is no such index, return -1 at the end
+    // Time: O(n), Space: O(n)
 
-        public int findJudge(int N, int[][] trust) {
-            if(trust.length == 0) {
-                return N == 1 ? 1 : -1;
-            }
-            int [] arr = new int[N+1];
-            for(int i = 0; i < trust.length; i++) {
-                arr[trust[i][0]] = -1;
-            }
-
-            for(int i = 0; i < trust.length; i++) {
-                if(arr[trust[i][1]] != -1) {
-                    arr[trust[i][1]]++;
-                }
-            }
-
-            for(int i = 0; i < arr.length; i++) {
-                if(arr[i] == N-1) {
-                    return i;
-                }
-            }
-
-            return -1;
+    public int findJudge(int N, int[][] trust) {
+        if(trust.length == 0) {
+            return N == 1 ? 1 : -1;
         }
+        int [] arr = new int[N+1];
+        for(int i = 0; i < trust.length; i++) {
+            arr[trust[i][0]] = -1;
+        }
+
+        for(int i = 0; i < trust.length; i++) {
+            if(arr[trust[i][1]] != -1) {
+                arr[trust[i][1]]++;
+            }
+        }
+
+        for(int i = 0; i < arr.length; i++) {
+            if(arr[i] == N-1) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
 }
