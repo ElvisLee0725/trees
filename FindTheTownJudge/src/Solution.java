@@ -11,6 +11,7 @@ public class Solution {
         int [][] trust = {{1,3},{1,4},{2,3},{2,4},{4,3}};
         System.out.print(new Solution().findJudge(4, trust));
     }
+    // A judge is trusted by N-1 people, and he trusts nobody
     // Use an arr[N+1], if arr[i] is -1, means it trusts others so it's not a judge. If arr[i] == N - 1, it's the judge
     // Iterate trust and set arr[trust[i][0]] to -1
     // Iterate trust again and if arr[i] is not -1, arr[trust[i][1]]++
