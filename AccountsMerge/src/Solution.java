@@ -48,21 +48,31 @@ class Solution {
             String name = a.get(0);
             for(int i = 1; i < a.size(); i++) {
                 String email1 = a.get(i);
-                map.putIfAbsent(email1, new ArrayList());
+                map.computeIfAbsent(email1, x -> new ArrayList());
                 for(int j = 1; j < a.size(); j++) {
                     String email2 = a.get(j);
-                    map.putIfAbsent(email2, new ArrayList());
-                    if(!map.get(email1).contains(email2)) {
-                        map.get(email1).add(email2);
-                    }
+                    if(!email1.equals(email2)) {
+                        map.computeIfAbsent(email2, x -> new ArrayList());
+                        if (!map.get(email1).contains(email2)) {
+                            map.get(email1).add(email2);
+                        }
 
-                    if(!map.get(email2).contains(email1)) {
-                        map.get(email2).add(email1);
+                        if (!map.get(email2).contains(email1)) {
+                            map.get(email2).add(email1);
+                        }
                     }
                 }
                 emailToName.putIfAbsent(email1, name);
             }
         }
+
+//         for(String email : map.keySet()) {
+//             System.out.print(email + ": ");
+//             for(String s : map.get(email)) {
+//                 System.out.print(s + " ");
+//             }
+//             System.out.println();
+//         }
 
         List<List<String>> res = new ArrayList();
         HashSet<String> hs = new HashSet();
