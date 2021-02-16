@@ -1,4 +1,11 @@
 // Store the graph of <email, list of related emails> with a HashMap. Also use a <Email, Name> to store the associsted name of that email
+// Ex: Key: Value
+// johnnybravo@mail.com: johnnybravo@mail.com
+// johnsmith@mail.com: johnsmith@mail.com john_newyork@mail.com john00@mail.com
+// john00@mail.com: johnsmith@mail.com john00@mail.com
+// john_newyork@mail.com: johnsmith@mail.com john_newyork@mail.com
+// mary@mail.com: mary@mail.com
+
 // For each key of the map, if it's not seen before, get all it's neighbors and their neighbors to add to
 // a list without duplication. Then, sort it and insert name at index 0
 
