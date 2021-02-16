@@ -8,7 +8,7 @@ import java.util.List;
 
 class Solution {
     public static void main(String[] args) {
-        
+
     }
     public List<Integer> getLonelyNodes(TreeNode root) {
         List<Integer> res = new ArrayList();
