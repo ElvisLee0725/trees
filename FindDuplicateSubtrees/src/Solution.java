@@ -9,7 +9,7 @@ import java.util.List;
 // Time: O(n), Space: O(n)
 class Solution {
     public static void main(String[] args) {
-        
+
     }
     int index;
     HashMap<String, Integer> trees;
