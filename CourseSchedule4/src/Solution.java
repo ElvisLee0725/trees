@@ -3,7 +3,7 @@
 // Fill in dp from left to right, top to bottom => Check if dp[j][i] is true? If so, that means I can check from dp[i][k], dp[i][k+1]...dp[i][n-1] to see if its true, then dp[j][k] must be true!
 // Iterate the queries, all the answers are in dp matrix
 // Return the result
-// Time: O(n^2), Space: O(n^2)
+// Time: O(n^3), Space: O(n^2)
 
 import java.util.ArrayList;
 import java.util.List;
